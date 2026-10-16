@@ -1,6 +1,6 @@
 # Oyshi Tabassum
 
-Portfolio site for Oyshi Tabassum, a master's student in Software Engineering at Memorial University of Newfoundland.
+Portfolio site for Oyshi Tabassum Aditi, a machine learning and deep learning engineer in the Master of Engineering in Software Engineering at Memorial University of Newfoundland.
 
 The live site is [oyshitabassum.github.io](https://oyshitabassum.github.io/).
 
