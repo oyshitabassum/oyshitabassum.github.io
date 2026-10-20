@@ -1,0 +1,197 @@
+.timeline {
+  scroll-margin-top: 5.5rem;
+}
+
+.head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem 2rem;
+}
+
+.title {
+  margin-top: 0.75rem;
+  font-size: clamp(1.5rem, 2.6vw, 2rem);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1.1;
+}
+
+.legend {
+  display: flex;
+  gap: 1.1rem;
+  list-style: none;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.legend li {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.legend li::before {
+  content: "";
+  width: 1.4rem;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--push);
+}
+
+.legend li[data-kind="study"]::before {
+  background: var(--pull);
+}
+
+.legend li[data-kind="mark"]::before {
+  width: 9px;
+  height: 9px;
+  border-radius: 1px;
+  transform: rotate(45deg);
+  background: var(--ink);
+}
+
+.rows {
+  margin-top: 1.75rem;
+  list-style: none;
+}
+
+.row,
+.axisRow {
+  display: grid;
+  gap: 0.75rem 2rem;
+}
+
+.row {
+  padding-block: 1.1rem;
+  border-top: 1px solid var(--line);
+}
+
+.who h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.who p {
+  color: var(--ink-2);
+  font-size: 0.92rem;
+}
+
+.who .when {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.track {
+  position: relative;
+  height: 14px;
+  margin-top: 0.3rem;
+  border-radius: 999px;
+  background-color: var(--surface-2);
+  background-image: linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: calc(100% / var(--years)) 100%;
+  box-shadow: inset 0 0 0 1px var(--line);
+}
+
+.bar {
+  --c: var(--push);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  border-radius: 999px;
+  background: var(--c);
+}
+
+.bar[data-kind="study"] {
+  --c: var(--pull);
+}
+
+.bar[data-ongoing] {
+  background: linear-gradient(90deg, var(--c) 65%, color-mix(in srgb, var(--c) 25%, transparent));
+}
+
+.notes {
+  margin-top: 0.85rem;
+  padding-left: 1.1rem;
+  color: var(--ink-2);
+  font-size: 0.92rem;
+}
+
+.notes li + li {
+  margin-top: 0.25rem;
+}
+
+.notes li::marker {
+  color: var(--muted);
+}
+
+.axisRow {
+  padding-top: 0.4rem;
+  border-top: 1px solid var(--line);
+}
+
+.axis {
+  position: relative;
+  height: 3.2rem;
+}
+
+.year,
+.mark {
+  position: absolute;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+.year {
+  bottom: 0;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.72rem;
+}
+
+.year[data-edge="start"] {
+  transform: none;
+}
+
+.year[data-edge="end"] {
+  transform: translateX(-100%);
+}
+
+.mark {
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  color: var(--ink);
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.mark::after {
+  content: "";
+  width: 9px;
+  height: 9px;
+  border-radius: 1px;
+  transform: rotate(45deg);
+  background: var(--ink);
+}
+
+@media (min-width: 820px) {
+  .row,
+  .axisRow {
+    grid-template-columns: 17rem minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 819px) {
+  .axisRow > span:first-child {
+    display: none;
+  }
+
+  .year[data-odd] {
+    visibility: hidden;
+  }
+}

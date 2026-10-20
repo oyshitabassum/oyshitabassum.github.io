@@ -1,0 +1,73 @@
+.title {
+  margin-top: 0.75rem;
+  font-size: clamp(1.5rem, 2.6vw, 2rem);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1.1;
+}
+
+.intro {
+  margin-top: 0.8rem;
+  color: var(--ink-2);
+}
+
+.steps {
+  position: relative;
+  margin-top: 1.5rem;
+  list-style: none;
+}
+
+/* the line joining the steps */
+.steps::before {
+  content: "";
+  position: absolute;
+  top: 0.9rem;
+  bottom: 0.9rem;
+  left: 4.5px;
+  width: 1px;
+  background: var(--line-strong);
+}
+
+.steps li {
+  position: relative;
+  display: grid;
+  gap: 0.05rem;
+  padding: 0.55rem 0 0.55rem 1.6rem;
+  color: var(--ink-2);
+  font-size: 0.95rem;
+}
+
+.steps li::before {
+  content: "";
+  position: absolute;
+  top: 0.95rem;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid var(--pull);
+  background: var(--surface);
+}
+
+.steps li[data-who="me"]::before {
+  border-color: var(--push);
+  background: var(--push);
+}
+
+.who {
+  color: var(--pull-ink);
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.steps li[data-who="me"] .who {
+  color: var(--push-ink);
+}
+
+.steps li[data-who="me"] {
+  color: var(--ink);
+  font-weight: 600;
+}

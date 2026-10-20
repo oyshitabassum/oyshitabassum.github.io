@@ -1,0 +1,110 @@
+.plot {
+  margin-top: clamp(2rem, 5vw, 3.25rem);
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--line);
+}
+
+.scale {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 0.7rem;
+  color: var(--ink-2);
+  font-size: 0.9rem;
+}
+
+.key {
+  margin-right: 0.35rem;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.78rem;
+}
+
+.track {
+  display: flex;
+  height: 3.6rem;
+}
+
+/* The 14px notch plus a 10px overlap leaves the thin light chevrons SHAP draws between forces. */
+.force {
+  flex-basis: 0;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  margin-right: -10px;
+  padding: 0 1.4rem 0 1.6rem;
+  border: 0;
+  background: var(--push);
+  color: #fff;
+  font: 600 0.9rem/1.15 var(--sans);
+  text-align: left;
+  cursor: pointer;
+  clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 50%, calc(100% - 14px) 100%, 0 100%, 14px 50%);
+  transform-origin: left center;
+  animation: grow 0.6s cubic-bezier(0.2, 0.7, 0.2, 1) backwards;
+  transition: opacity 0.15s;
+}
+
+.force:first-child {
+  padding-left: 1.1rem;
+  clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 50%, calc(100% - 14px) 100%, 0 100%);
+}
+
+.force:last-child {
+  margin-right: 0;
+}
+
+.track:has([data-active]) .force:not([data-active]) {
+  opacity: 0.4;
+}
+
+.force:focus-visible {
+  outline: none;
+  text-decoration: underline 2px;
+  text-underline-offset: 0.25em;
+}
+
+.detail {
+  min-height: 3.4em;
+  margin-top: 1rem;
+  max-width: 48rem;
+  color: var(--ink-2);
+  font-size: 0.95rem;
+}
+
+.detail b {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+@keyframes grow {
+  from {
+    opacity: 0;
+    transform: scaleX(0.2);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (max-width: 719px) {
+  .track {
+    flex-direction: column;
+    height: auto;
+    gap: 4px;
+  }
+
+  .force,
+  .force:first-child {
+    flex: none;
+    min-height: 2.9rem;
+    margin: 0;
+    padding: 0.6rem 2rem 0.6rem 1rem;
+    clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 50%, calc(100% - 14px) 100%, 0 100%);
+  }
+
+  .detail {
+    min-height: 5em;
+  }
+}
