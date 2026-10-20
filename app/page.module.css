@@ -1,0 +1,44 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: var(--gap);
+  padding-block: 0.5rem var(--gap);
+}
+
+.grid > * {
+  display: grid;
+  min-width: 0;
+  grid-column: span 12;
+}
+
+@media (min-width: 1000px) {
+  .wide {
+    grid-column: span 8;
+  }
+
+  .narrow {
+    grid-column: span 4;
+  }
+
+  .wideish {
+    grid-column: span 7;
+  }
+
+  .narrowish {
+    grid-column: span 5;
+  }
+}
+
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.5rem 1.5rem;
+  padding-block: 1.5rem 2.5rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.footer a {
+  color: var(--ink-2);
+}

@@ -1,0 +1,19 @@
+# Oyshi Tabassum Aditi
+
+Machine learning engineer. MEng student in Software Engineering at Memorial University of Newfoundland, St. John's. Junior Executive at TechAByte Solutions, Dhaka, since August 2022, working on NLP models and Parrot GPT. Interned there from March to July 2022. BEng in Computer Science and Engineering from Daffodil International University, 2018-2022.
+
+## Research
+
+- Co-author, "Explainable AI for Epileptic Seizure Prediction: A SHAPE and LIME Approach", ACIT 2024. https://doi.org/10.1109/ACIT62805.2024.10877071
+  - An extra trees model reached 99.51% accuracy, explained with SHAP and LIME.
+
+## Skills
+
+Python, C++, Java, scikit-learn, pandas, NumPy, TensorFlow, Keras, CNNs, RNNs, NLP, computer vision, explainable AI, UML, database design, Git
+
+## Contact
+
+- Email: oyshitabassum113@gmail.com
+- LinkedIn: https://www.linkedin.com/in/oyshitabassum-aditi
+- GitHub: https://github.com/oyshitabassum
+- Site: https://oyshitabassum.github.io/

@@ -1,0 +1,41 @@
+.now {
+  display: flex;
+  flex-direction: column;
+  background: var(--pull-wash);
+  border-color: color-mix(in srgb, var(--pull) 22%, var(--line));
+}
+
+.title {
+  margin-top: 1rem;
+  font-size: clamp(1.6rem, 2.6vw, 2rem);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1.1;
+}
+
+.body {
+  margin-top: 0.8rem;
+  color: var(--ink-2);
+}
+
+.learning {
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid color-mix(in srgb, var(--pull) 22%, var(--line));
+}
+
+.learning p:last-child {
+  margin-top: 0.4rem;
+  color: var(--ink-2);
+}
+
+.place {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: auto;
+  padding-top: 1.75rem;
+  color: var(--pull-ink);
+  font-size: 0.92rem;
+  font-weight: 600;
+}

@@ -1,19 +1,30 @@
-# Oyshi Tabassum
+# oyshitabassum.github.io
 
-Portfolio site for Oyshi Tabassum Aditi, a machine learning and deep learning engineer in the Master of Engineering in Software Engineering at Memorial University of Newfoundland.
+Portfolio site for Oyshi Tabassum Aditi, a machine learning engineer. Live at [oyshitabassum.github.io](https://oyshitabassum.github.io/).
 
-The live site is [oyshitabassum.github.io](https://oyshitabassum.github.io/).
+## Stack
 
-## Publish
+Next.js 16 static export, TypeScript, CSS Modules.
 
-GitHub Pages serves this repository from the `main` branch, root folder. Edit the files, commit, and push to `main`. Pages republishes the site from that push.
+## Develop
 
-```text
-index.html    page
-styles.css    layout and type
-script.js     section highlight in the side index
-404.html      unknown addresses
-favicon.svg   tab icon
+```sh
+npm install
+npm run dev
+npm run build   # outputs out/
 ```
 
-There is no build step.
+## Deploy
+
+Pushing to `main` runs `.github/workflows/deploy.yml`, which builds the site and publishes `out/` to GitHub Pages.
+
+One-time setup: in the repo's Settings → Pages, set Source to "GitHub Actions".
+
+## Layout
+
+```text
+app/             layout, page, 404
+components/      UI components
+data/profile.ts  all content lives here
+public/          favicon, llms.txt, .nojekyll
+```
